@@ -5,7 +5,7 @@ import {
   InvoiceForm,
   InvoicesTable,
   LatestInvoiceRaw,
-  Revenue,
+  Revenue,  
 } from './definitions';
 import { formatCurrency } from './utils';
 
@@ -19,8 +19,10 @@ export async function fetchRevenue() {
     // console.log('Fetching revenue data...');
     // await new Promise((resolve) => setTimeout(resolve, 3000));
 
+    console.log("Fetching data...");
+    await new Promise((res) => setTimeout(res, 3000));
     const data = await sql<Revenue[]>`SELECT * FROM revenue`;
-
+    console.log("Data fetched after 3s")
     // console.log('Data fetch completed after 3 seconds.');
 
     return data;
